@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
-import Expert from "../../assets/images/Rectangle24379.png";
+import Expert from "../../assets/images/profile-consul.jpg";
 const Profile = () => {
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
@@ -12,128 +12,131 @@ const Profile = () => {
       id: 1,
       title: "Ask a Vet",
       description:
-        "You can ask me any question about a single issue you are facing with your dog or any other concerns you may have",
+        "You can ask me any question about a single issue you are facing regarding your specialization field",
       price: "129",
       cta: "Ask",
     },
-    {
-      id: 2,
-      title: "Chat with me",
-      description:
-        "You can ask me any question about a single issue you are facing with your dog or any other concerns you may have",
-      price: "199",
-      cta: "Chat Now",
-    },
-    {
-      id: 2,
-      title: "Video Connect",
-      description:
-        "You can ask me any question about a single issue you are facing with your dog or any other concerns you may have",
-      price: "399",
-      cta: "Book Now",
-    },
   ];
 
-  const rating = [
-    {
-      id: 1,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus vitae odio lacus in odio congue . Lorem ipsum dolor sit...",
-      ownername: "John",
-      petname: "Shaw's",
-      time: "1",
-    },
-    {
-      id: 2,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus vitae odio lacus in odio congue . Lorem ipsum dolor sit...",
-      ownername: "John",
-      petname: "Shaw's",
-      time: "1",
-    },
-    {
-      id: 3,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus vitae odio lacus in odio congue . Lorem ipsum dolor sit...",
-      ownername: "John",
-      petname: "Shaw's",
-      time: "1",
-    },
-  ];
   return (
     <HomeLayout>
       {loading ? (
         <Splash />
       ) : (
-        <section style={{ paddingTop: "58px", backgroundColor: "#f3f4f6" }}>
-          <div className="pt-32  " style={{ zIndex: "10" }}>
-            <div className="" style={{ textAlign: "center" }}>
+        <section
+          style={{
+            paddingTop: "90px",
+            backgroundColor: "#f3f4f6",
+            paddingBottom: "70px",
+            fontFamily: "poppins",
+          }}
+        >
+          <div style={{ zIndex: "10", paddingTop: "32px" }}>
+            <div style={{ textAlign: "center" }}>
               <img
-                className="radius-6"
-                style={{ height: "100%", width: "232px" }}
+                style={{ height: "100%", width: "232px", borderRadius: "6px" }}
                 src={Expert}
                 alt=""
               />
               <p
-                className="mb-0 font-30 mt-16 font-semi "
-                style={{ lineHeight: "30px" }}
+                style={{
+                  lineHeight: "30px",
+                  marginBottom: "0",
+                  fontSize: "30px",
+                  marginTop: "16px",
+                  fontWeight: "600",
+                }}
               >
                 Er.
               </p>
               <p
-                className="mb-0 mt-10 font-16 font-regular"
-                style={{ lineHeight: "16px" }}
+                style={{
+                  lineHeight: "16px",
+                  marginBottom: "0",
+                  fontSize: "16px",
+                  marginTop: "10px",
+                  fontWeight: "400",
+                }}
               >
                 Frontend
               </p>
               <p
                 className="mb-0  font-16 font-regular"
-                style={{ lineHeight: "16px", marginTop: "4px" }}
+                style={{
+                  lineHeight: "16px",
+                  marginTop: "4px",
+                  marginBottom: "0",
+                  fontSize: "16px",
+                  fontWeight: "400",
+                }}
               >
                 25 years experience
               </p>
 
               <div
-                className="d-flex justify-content-center mt-16 pb-24"
-                style={{ gap: "10px" }}
+                style={{
+                  gap: "10px",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "16px",
+                }}
               >
                 <div
-                  className="px-16 py-16 radius-8"
-                  style={{ backgroundColor: "#F3F4F6" }}
+                  style={{
+                    backgroundColor: "#FFF",
+                    padding: "16px",
+                    borderRadius: "8px",
+                  }}
                 >
                   <p
-                    className="mb-0 font-16 font-medium"
-                    style={{ lineHeight: "16px" }}
+                    style={{
+                      lineHeight: "16px",
+                      marginBottom: "0px",
+                      fontSize: "16px",
+                      fontWeight: "500",
+                    }}
                   >
                     -
                   </p>
                   <p
-                    className="mb-0 mt-8 font-medium"
                     style={{
-                      fontSize: "13px",
+                      fontSize: "14px",
                       lineHeight: "12px",
-                      opacity: "0.5",
+                      opacity: "0.6",
+                      marginBlock: "0px",
+                      marginTop: "8px",
+                      fontFamily: "500",
                     }}
                   >
                     Ratings
                   </p>
                 </div>
                 <div
-                  className="px-16 py-16 radius-8"
-                  style={{ backgroundColor: "#F3F4F6" }}
+                  style={{
+                    backgroundColor: "#FFF",
+                    padding: "16px",
+                    borderRadius: "8px",
+                  }}
                 >
                   <p
                     className="mb-0 font-16 font-medium"
-                    style={{ lineHeight: "16px" }}
+                    style={{
+                      lineHeight: "16px",
+                      marginBlock: "0",
+                      fontSize: "16px",
+                      fontWeight: "500",
+                    }}
                   >
                     -
                   </p>
                   <p
-                    className="mb-0 mt-8 font-medium"
                     style={{
                       fontSize: "13px",
                       lineHeight: "12px",
-                      opacity: "0.5",
+                      opacity: "0.6",
+                      marginBottom: "0px",
+                      marginTop: "8px",
+                      fontWeight: "500",
                     }}
                   >
                     found them helpful
@@ -154,38 +157,68 @@ const Profile = () => {
                 style={{
                   lineHeight: "26px",
                   marginBottom: "0",
-                  fontSize: "20px",
-                  fontWeight: "600",
+                  fontSize: "26px",
+                  fontWeight: "700",
                   paddingTop: "24px",
                 }}
               >
-                Offerings
+                Offering
               </p>
               {offering.map((item, id) => {
                 return (
                   <div
                     key={id}
-                    className="px-16 py-24 bg-white radius-12 mt-16"
-                    style={{ textAlign: "start" }}
+                    style={{
+                      textAlign: "start",
+                      marginTop: "18px",
+                      backgroundColor: "#fff",
+                      padding: "8px",
+                      borderRadius: "4px",
+                    }}
                   >
-                    <p className="mb-0 font-20 font-semi">{item.title}</p>
                     <p
-                      className="mb-0 font-12 mt-8 font-medium "
-                      style={{ opacity: "0.5" }}
+                      style={{
+                        fontSize: "18px",
+                        marginBottom: "0px",
+                        fontWeight: "600",
+                      }}
+                    >
+                      {item.title}:-
+                    </p>
+                    <p
+                      style={{
+                        opacity: "0.8",
+                        fontSize: "18px",
+                        fontWeight: "500",
+                        lineHeight: "24px",
+                        marginTop: "8px",
+                      }}
                     >
                       {item.description}
                     </p>
-                    <div className="mt-24 d-flex">
+                    <div style={{ display: "flex", marginTop: "18px" }}>
                       <p
-                        className="mb- font-14 font-semi"
-                        style={{ lineHeight: "18px", flex: "0.6" }}
+                        style={{
+                          lineHeight: "18px",
+                          flex: "0.6",
+                          marginBottom: "0px",
+                          marginTop: "8px",
+                          fontFamily: "monotype corsiva",
+                          fontSize: "26px",
+                        }}
                       >
-                        at Rs {item.price} <br />{" "}
-                        <u style={{ opacity: "0.5" }}>know more</u>
+                        at Rs {item.price}
                       </p>
                       <p
-                        className="font-16 font-semi px-14 py-10 radius-8 bg-black font-white"
-                        style={{ textAlign: "center", flex: "0.4" }}
+                        style={{
+                          textAlign: "center",
+                          flex: "0.4",
+                          fontSize: "16px",
+                          borderRadius: "8px",
+                          backgroundColor: "#171717",
+                          color: "#fff",
+                          padding: "10px 14px 10px 14px",
+                        }}
                       >
                         {item.cta}
                       </p>

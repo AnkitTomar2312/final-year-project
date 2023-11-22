@@ -5,7 +5,6 @@ import Home from "./pages/home";
 import Notes from "./pages/notes/notes";
 import Goals from "./pages/goals/goals";
 import Profile from "./pages/profile/profile";
-import Profiles from "./pages/profile/Profiles";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/notes" element={<Notes />} />
       <Route path="/goals" element={<Goals />} />
-      <Route path="/profile" element={<Profiles/>} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/" element={<Login />} />
     </Routes>
   );

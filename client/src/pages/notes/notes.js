@@ -1,24 +1,15 @@
 import React, { useState } from "react";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
-import DS from "./DS";
-import dsa from "../../components/Notess/dsa"
-
+import DSA from "../../assets/images/DSA.jpeg";
+import Frontend from "../../assets/images/Frontend.png";
+import Backend from "../../assets/images/backend.jpeg";
+import Python from "../../assets/images/python.jpeg";
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
   }, 2000);
-
-  function createDSA(note){
-    return<DS
-    key={note.id}
-    type={note.type}
-    Question={note.Question}
-    Link={note.Link}
-    Companies={note.Companies}
-  />
-  }
 
   return (
     <HomeLayout>
@@ -27,14 +18,65 @@ const Notes = () => {
       ) : (
         <section
           style={{
-            paddingTop: "60px",
+            padding: "60px 24px 100px 24px",
             backgroundColor: "#f3f4f6",
-            height: "100vh",
+            height: "auto",
+            width: "100%",
           }}
         >
-          {
-            dsa.map(createDSA)
-          }
+          <div
+            style={{
+              marginTop: "60px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "18px",
+            }}
+          >
+            <div
+              style={{
+                height: "200px",
+                width: "auto",
+                backgroundColor: "#FFF",
+                backgroundImage: `url(${DSA})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                borderRadius: "8px",
+              }}
+            ></div>
+            <div
+              style={{
+                height: "200px",
+                width: "auto",
+                backgroundColor: "#FFF",
+                backgroundImage: `url(${Frontend})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                borderRadius: "8px",
+              }}
+            ></div>
+            <div
+              style={{
+                height: "200px",
+                width: "auto",
+                backgroundColor: "#FFF",
+                backgroundImage: `url(${Backend})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                borderRadius: "8px",
+              }}
+            ></div>
+            <div
+              style={{
+                height: "200px",
+                width: "auto",
+                backgroundColor: "#FFF",
+                backgroundImage: `url(${Python})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                borderRadius: "8px",
+              }}
+            ></div>
+          </div>
         </section>
       )}
     </HomeLayout>

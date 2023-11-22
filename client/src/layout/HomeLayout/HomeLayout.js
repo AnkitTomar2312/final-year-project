@@ -15,7 +15,17 @@ const HomeLayout = ({ children }) => {
             zIndex: "100",
           }}
         >
-          Aupdeshik
+          <p
+            align="center"
+            style={{
+              marginBottom: "0px",
+              fontSize: "48px",
+              fontFamily: "monotype corsiva",
+              fontWeight: "600",
+            }}
+          >
+            Aupdeshik
+          </p>
         </div>
       </div>
       {children}

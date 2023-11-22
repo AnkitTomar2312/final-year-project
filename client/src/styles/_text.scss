@@ -1,0 +1,88 @@
+$sizes: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 40, 48, 56,
+  64, 66;
+$weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semi": 600,
+  "bold": 700,
+);
+$colors: (
+  "white": #fff,
+  "green": #07e9a1,
+  "light-green": #e3f4ec,
+  "light-green-2": #99e7c9,
+  "yellow": #ffd66d,
+  "blue": #171717,
+  "light-blue": #b6e6f9,
+  "off-white": #f5f5f5,
+  "red": #f76152,
+  "gray": #f6f6f6,
+  "light-yellow": #fbedcc,
+);
+
+/*
+font styles that will be generated as follows
+
+general - 
+    font size: font-8, font-10 ...etc
+    font-color: font-green, font-light-green, font-yellow, font-blue, font-light-blue
+    font-weight: font-light, font-regular, font-medium, font-semi, font-bold
+
+mobile - 
+    font size: font-sm-8, font-sm-10 ...etc
+    font-weight: font-sm-light, font-sm-regular, font-sm-medium, font-sm-semi, font-sm-bold
+
+tab - 
+    font size: font-md-8, font-md-10 ...etc
+     font-weight: font-md-light, font-md-regular, font-md-medium, font-md-semi, font-md-bold
+*/
+
+// font sizes
+@each $size in $sizes {
+  .font-#{$size} {
+    font-size: $size + px;
+  }
+}
+
+// font weights
+@each $name, $weight in $weights {
+  .font-#{$name} {
+    font-weight: $weight;
+  }
+}
+
+// font colors;
+@each $name, $color in $colors {
+  .font-#{$name} {
+    color: $color;
+  }
+}
+
+@include mobile {
+  @each $size in $sizes {
+    .font-sm-#{$size} {
+      font-size: $size + px;
+    }
+  }
+
+  @each $name, $weight in $weights {
+    .font-sm-#{$name} {
+      font-weight: $weight;
+    }
+  }
+}
+
+@include tab {
+  @each $size in $sizes {
+    .font-md-#{$size} {
+      font-size: $size + px;
+    }
+  }
+
+  @each $name, $weight in $weights {
+    .font-md-#{$name} {
+      font-weight: $weight;
+    }
+  }
+}

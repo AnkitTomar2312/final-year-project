@@ -1,0 +1,127 @@
+.mainProf{
+    padding-top: 68px ;
+    background-color: #f3f4f6;
+}
+
+.leftt{
+    display: flex;
+    gap: 2rem;
+}
+
+.lefttPart {
+    background:linear-gradient(to right,#007991,#78FFD6 );
+    width: 100%;
+    border-radius: 2rem 0 0px 2rem;
+}
+
+.leftt img{
+    height: 80px;
+    width: 80px;
+    margin: 0.5rem 0 0 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 10px 15px lightblue;
+}
+
+.leftt .lefttPart .left1{
+    margin-top: 1rem;
+    display: flex;
+}
+
+.left1 .head {
+    padding-left: 2rem;
+    padding-top: 2px ;
+}
+
+.left1 .det {
+    padding-left: 1rem;
+    color: rgb(54, 50, 50);
+    padding-top: 3px;
+    font-size: 22px;
+}
+
+.left2 {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.left2 .ratings {
+    border-radius: 2rem;
+    width: 50%;
+    padding: 2px 10px 2px 10px;
+    background-color: rgb(37, 112, 174);
+    color: white;
+}
+
+
+
+
+
+.secondd{
+    width: 100%;
+    border: 2px solid black;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.bott{
+    margin: 1rem 0 1rem 1rem;
+}
+.bott .exp {
+    border: 2px solid black;
+    width: 66%;
+    border-radius: 2rem;
+    padding-left: 0.7rem;
+    background-color: rgb(45, 41, 41);
+    color: white;
+    box-shadow: 10px 10px 5px lightblue;
+    cursor: pointer;
+}
+
+.secDet{
+    display: flex;
+    margin: 0 5.4rem 0 0 ;
+    justify-content: space-around;
+}
+
+.secondd .detailss{
+    color: rgb(92, 86, 86);
+    margin-left: 1rem;
+}
+
+
+.secondd .decs {
+    border: 2px solid rgb(45, 78, 88);
+    border-radius: 2rem;
+    padding: 2px 10px 2px 10px;
+    background-color: rgb(45, 41, 41);
+    color: white;
+    box-shadow: 10px 10px 5px lightblue;
+    cursor: pointer;
+} 
+
+.offH{
+    margin: 0 0 1.2rem 6rem;
+    color: grey;
+}
+
+
+.offers{
+    display: flex;
+    background:linear-gradient(to right, rgb(167, 165, 165), rgb(202, 200, 200), rgb(223, 220, 220));
+    border: 2px solid red;
+    margin:0.5rem;
+    border-radius: 20px;
+}
+
+.ol{
+    margin: 1rem;
+}
+
+.ol .imgg{
+    background:linear-gradient(to right, rgb(223, 168, 65),rgb(206, 171, 106),rgb(205, 189, 161));
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+
+
+
+

@@ -1,0 +1,11 @@
+.ds{
+    border: 2px solid red;
+    display: grid;
+    border-radius: 10px 10px 0 0 ;
+    width: 100%;
+}
+
+.ds_top{
+    background-color: aqua;
+    border-radius: 10px 10px 0 0 ;
+}

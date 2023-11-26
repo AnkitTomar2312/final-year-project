@@ -1,0 +1,73 @@
+$green: #07e9a1;
+$lightGreen: #e3f4ec;
+$yellow: #ffd66d;
+$blue: #171717;
+$lightBlue: #a9cdf9;
+$red: #f76152;
+
+$colors: (
+  "green": #07e9a1,
+  "green-2": #17ad7d,
+  "green-3": #02c878,
+  "light-green": #e3f4ec,
+  "light-green-2": #99e7c9,
+  "yellow": #ffd66d,
+  "light-yellow": #ffefcb,
+  "blue": #171717,
+  "blue-2": #01234e,
+  "light-blue": #a9cdf9,
+  "off-white": #f5f5f5,
+  "lightYellow": #f5f2ed,
+  "lightPurple": #f3f3f4,
+  "redgradient":
+    linear-gradient(
+      180deg,
+      #ff7e83 0%,
+      #ff9687 46.15%,
+      rgba(255, 126, 131, 0) 100%
+    ),
+  "greengradient":
+    linear-gradient(
+      179.69deg,
+      #07e9a1 0.25%,
+      #00cdac 39.94%,
+      rgba(41, 211, 149, 0) 99.73%
+    ),
+  "greengradient1":
+    linear-gradient(
+      179.69deg,
+      #07e9a1 0.25%,
+      #07e9a1 25.43%,
+      #00cdac 58.59%,
+      rgba(41, 211, 149, 0) 99.73%
+    ),
+  "yellowgradient":
+    linear-gradient(
+      180deg,
+      #ffed8b 0%,
+      #ffde87 46.15%,
+      rgba(255, 237, 139, 0) 100%
+    ),
+  "yellowgradient2":
+    linear-gradient(180deg, #ffed8b 0%, #ffde87 46.15%, #ffed8b 100%),
+  //"red": #f76152,
+  "pink": #fab2b4,
+  "gray": #f3f4f6,
+  "gray2": #f3f3f4,
+  "black": #171717,
+  "white": #ffffff,
+  "grey": #c4c4c4,
+);
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background: $color;
+  }
+}
+// bg-green, bg-light-green
+
+@each $name, $color in $colors {
+  .border-#{$name} {
+    border: solid 1px $color;
+  }
+}

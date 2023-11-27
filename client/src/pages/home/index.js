@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
+import { useNavigate } from "react-router-dom";
 import Splash from "../../components/splash/splash";
 import Chat from "../../components/Chat/Chat";
 import illus from "../../assets/icons/back-illustration.svg";
@@ -12,8 +13,8 @@ import Journal from "../../assets/icons/journal.svg";
 import Aim from "../../assets/icons/aim.svg";
 import Search from "../../assets/images/search.png";
 const Index = ({ children }) => {
+  const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoader(false);
@@ -349,6 +350,9 @@ const Index = ({ children }) => {
                     marginBottom: "0",
                     borderRadius: "8px",
                     marginTop: "3px",
+                  }}
+                  onClick={() => {
+                    navigate("/chat");
                   }}
                 >
                   try search

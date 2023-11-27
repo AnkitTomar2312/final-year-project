@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
 import Expert from "../../assets/images/profile-consul.jpg";
 const Profile = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
@@ -219,6 +221,7 @@ const Profile = () => {
                           color: "#fff",
                           padding: "10px 14px 10px 14px",
                         }}
+                        onClick={() => navigate("/askAvet")}
                       >
                         {item.cta}
                       </p>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
 import DSA from "../../assets/images/DSA.jpeg";
@@ -6,6 +7,7 @@ import Frontend from "../../assets/images/Frontend.png";
 import Backend from "../../assets/images/backend.jpeg";
 import Python from "../../assets/images/python.jpeg";
 const Notes = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
@@ -42,6 +44,7 @@ const Notes = () => {
                 backgroundPosition: "center",
                 borderRadius: "8px",
               }}
+              onClick={() => navigate("/dsa")}
             ></div>
             <div
               style={{
@@ -53,6 +56,7 @@ const Notes = () => {
                 backgroundPosition: "center",
                 borderRadius: "8px",
               }}
+              onClick={() => navigate("/frontend")}
             ></div>
             <div
               style={{
@@ -64,6 +68,7 @@ const Notes = () => {
                 backgroundPosition: "center",
                 borderRadius: "8px",
               }}
+              onClick={() => navigate("/backend")}
             ></div>
             <div
               style={{
@@ -75,6 +80,7 @@ const Notes = () => {
                 backgroundPosition: "center",
                 borderRadius: "8px",
               }}
+              onClick={() => navigate("/python")}
             ></div>
           </div>
         </section>

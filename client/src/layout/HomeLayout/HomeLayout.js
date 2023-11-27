@@ -1,5 +1,6 @@
 import React from "react";
 import MobileBottomNav from "../../components/MobileBottomNav/MobileBottomNav";
+import appLogo from "../../assets/icons/app-logo.svg";
 const HomeLayout = ({ children }) => {
   return (
     <>
@@ -20,12 +21,13 @@ const HomeLayout = ({ children }) => {
             style={{
               marginBottom: "0px",
               fontSize: "48px",
-              fontFamily: "monotype corsiva",
+              fontFamily: "Bungee",
               fontWeight: "600",
             }}
           >
             Aupdeshik
           </p>
+          {/* <img style={{ width: "50px", height: "50px" }} src={appLogo} /> */}
         </div>
       </div>
       {children}

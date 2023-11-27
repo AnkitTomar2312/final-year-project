@@ -15,7 +15,25 @@ const Index = ({ children }) => {
     return () => clearTimeout(timeoutId);
   }, []); // Empty dependency array means this effect runs once on mount
 
-  return <HomeLayout>{loader ? <Splash /> : <Chat />}</HomeLayout>;
+  return (
+    <HomeLayout>
+      {loader ? (
+        <Splash />
+      ) : (
+        <section
+          style={{
+            padding: "60px 24px 100px 24px",
+            backgroundColor: "#f3f4f6",
+            height: "auto",
+            width: "100%",
+          }}
+        >
+          fjdsh
+        </section>
+      )}
+    </HomeLayout>
+  );
 };
 
 export default Index;
+//  <Chat />

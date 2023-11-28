@@ -52,6 +52,11 @@ function Login() {
       } catch (error) {
         // Handle login/signup errors
         console.error('Error:', error.message);
+        if(login){
+          setLogin(!login)
+          setEmail("")
+          setPassword("")
+        }
         alert('invalid user');
       }
     } else {

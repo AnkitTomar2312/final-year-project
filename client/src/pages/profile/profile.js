@@ -3,12 +3,29 @@ import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
 import Expert from "../../assets/images/profile-consul.jpg";
+import { auth } from "../../components/firebase/firebase";
+
 const Profile = () => {
+
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+
   setTimeout(() => {
     setLoading(false);
   }, 2000);
+
+  const handleLogout = async () => {
+    try {
+      // Sign out from Firebase
+      await auth.signOut();
+
+      // Navigate to the login page
+      navigate("/login");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   const offering = [
     {
       id: 1,
@@ -230,6 +247,29 @@ const Profile = () => {
                 );
               })}
             </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "80px",
+            }}
+          >
+            <p
+              style={{
+                padding: "8px 14px",
+                backgroundColor: "#f76152",
+                color: "#fff",
+                width: "45%",
+                textAlign: "center",
+                borderRadius: "8px",
+                cursor:"pointer",
+              }}
+              onClick={handleLogout}
+            >
+              Log Out
+            </p>
           </div>
         </section>
       )}

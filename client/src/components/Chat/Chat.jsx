@@ -1,4 +1,6 @@
 import { useState } from "react";
+import HomeLayout from "../../layout/HomeLayout/HomeLayout";
+import Splash from "../../components/splash/splash";
 import ChatMessage from "./ChatMessage";
 import SideMenu from "../SideMenu/SideMenu";
 import "./Chat.css";
@@ -6,6 +8,10 @@ import "./normal.css";
 
 function Chat() {
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
   const [chatLog, setChatLog] = useState([
     {
       user: "gpt",
@@ -51,26 +57,41 @@ function Chat() {
   };
 
   return (
-    <div className="App">
-      <section className="chatbox">
-        <div className="chat-log">
-          {chatLog.map((message, index) => (
-            <ChatMessage key={index} message={message} />
-          ))}
-        </div>
-        <div className="chat-input-holder">
-          <form onSubmit={handleSubmit}>
-            <input
-              placeholder="Search here..."
-              value={input}
-              className="chat-input-textarea"
-              rows="1"
-              onChange={handleChange}
-            ></input>
-          </form>
-        </div>
-      </section>
-    </div>
+    <HomeLayout>
+      {loading ? (
+        <Splash />
+      ) : (
+        <section
+          style={{
+            padding: "60px 24px 100px 24px",
+            backgroundColor: "#f3f4f6",
+            height: "auto",
+            width: "100%",
+          }}
+        >
+          <div className="App">
+            <section className="chatbox">
+              <div className="chat-log">
+                {chatLog.map((message, index) => (
+                  <ChatMessage key={index} message={message} />
+                ))}
+              </div>
+              <div className="chat-input-holder">
+                <form onSubmit={handleSubmit}>
+                  <input
+                    placeholder="Search here..."
+                    value={input}
+                    className="chat-input-textarea"
+                    rows="1"
+                    onChange={handleChange}
+                  ></input>
+                </form>
+              </div>
+            </section>
+          </div>
+        </section>
+      )}
+    </HomeLayout>
   );
 }
 

@@ -25,6 +25,17 @@ const Dsa = () => {
       image: DSAQUE,
     },
   ];
+  const routerPush = (i) => {
+    if (i === 0) {
+      navigate("/dsa/practice-questions");
+    }
+    if (i === 1) {
+      navigate("/dsa/tutorials");
+    }
+    if (i === 2) {
+      navigate("/dsa/interview-questions");
+    }
+  };
   return (
     <HomeLayout>
       {loading ? (
@@ -50,6 +61,9 @@ const Dsa = () => {
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
+                }}
+                onClick={() => {
+                  routerPush(index);
                 }}
               >
                 <p

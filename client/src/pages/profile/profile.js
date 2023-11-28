@@ -29,7 +29,7 @@ const Profile = () => {
           style={{
             paddingTop: "90px",
             backgroundColor: "#f3f4f6",
-            paddingBottom: "70px",
+            paddingBottom: "90px",
             fontFamily: "poppins",
           }}
         >
@@ -230,6 +230,27 @@ const Profile = () => {
                 );
               })}
             </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "80px",
+            }}
+          >
+            <p
+              style={{
+                padding: "8px 14px",
+                backgroundColor: "#f76152",
+                color: "#fff",
+                width: "45%",
+                textAlign: "center",
+                borderRadius: "8px",
+              }}
+            >
+              Log Out
+            </p>
           </div>
         </section>
       )}

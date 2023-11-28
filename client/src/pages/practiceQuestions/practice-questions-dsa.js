@@ -6,13 +6,19 @@ import Arrow from "../../assets/icons/arrow.svg";
 const PracticeQuestions = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const Topics = ["Arrays", "Strings"];
+  const Topics = ["Arrays", "Strings", "Linked List"];
   setTimeout(() => {
     setLoading(false);
   }, 2000);
   const dsapush = (i) => {
     if (i === 0) {
       navigate("/dsa/practice-questions/arrays");
+    }
+    if (i === 1) {
+      navigate("/dsa/practice-questions/strings");
+    }
+    if (i === 2) {
+      navigate("/dsa/practice-questions/linkedList");
     }
   };
   return (

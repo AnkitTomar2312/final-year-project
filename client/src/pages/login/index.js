@@ -37,34 +37,38 @@ function Login() {
         if (login) {
           // User is trying to log in
           await signInWithEmailAndPassword(auth, email, password);
+          setEmail('');
+          setPassword('');
+          navigate("/home");
         } else {
           // User is trying to sign up
           await createUserWithEmailAndPassword(auth, email, password);
+          if(!login){
+            setEmail("")
+            setPassword("")
+            setLogin(!login)
+          }
         }
 
         // Clear the input fields
-        setEmail('');
-        setPassword('');
-        navigate("/home");
         // Redirect to the home page or another page upon successful login/signup
         // You can use React Router or another navigation method here
         console.log('Successful login/signup');
       } catch (error) {
         // Handle login/signup errors
         console.error('Error:', error.message);
-        if(login){
-          setLogin(!login)
-          setEmail("")
-          setPassword("")
-        }
         alert('invalid user');
       }
     } else {
       alert('Fill in all data');
       setError(true);
     }
-    
-    
+  };
+
+  const handleSwitch = () => {
+    setEmail("");
+    setPassword("");
+    setLogin(!login);
   };
 
   return (
@@ -126,7 +130,7 @@ function Login() {
                 setPassword(e.target.value);
               }}
             />
-            {error && email === "" && (
+            {error && password === "" && (
               <p
                 style={{
                   lineHeight: "16px",
@@ -176,11 +180,7 @@ function Login() {
               textDecoration: "underline",
               cursor:"pointer"
             }}
-            onClick={() => {
-              setEmail("")
-              setPassword("")
-              setLogin(!login);
-            }}
+            onClick={handleSwitch}
           >
             {login ? " Join" : " Log In"}
           </p>

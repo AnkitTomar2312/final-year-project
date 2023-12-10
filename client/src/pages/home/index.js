@@ -50,6 +50,9 @@ const Index = ({ children }) => {
                 borderRadius: "8px",
                 height: "532px",
               }}
+              onClick={() => {
+                navigate("/profile");
+              }}
             >
               <p
                 style={{
@@ -179,19 +182,35 @@ const Index = ({ children }) => {
               >
                 100% money back guarantee!
               </p>
-              <p
+              <div
                 style={{
-                  marginBottom: "0",
-                  textAlign: "center",
-                  fontWeight: "600",
-                  fontFamily: "Space GrOtesk",
-                  color: "#fff",
-                  fontSize: "14px",
-                  marginTop: "24px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "32px",
                 }}
+                onClick={() => navigate("/askAvet")}
               >
-                COMMING SOON!
-              </p>
+                <p
+                  style={{
+                    width: "67%",
+                    textAlign: "center",
+                    background: "rgb(255, 255, 255)",
+                    boxShadow:
+                      "rgba(96, 97, 112, 0.1) 0px 2px 4px 0px, rgba(40, 41, 61, 0.04) 0px 0px 1px 0px",
+                    padding: "10px 24px",
+                    fontWeight: "600",
+                    fontSize: "18px",
+                    marginBottom: "0",
+                    borderRadius: "8px",
+                  }}
+                  onClick={() => {
+                    navigate("/chat");
+                  }}
+                >
+                  ask an expert
+                </p>
+              </div>
               <img style={{ width: "100%", marginTop: "24px" }} src={Ask} />
             </div>
             <div

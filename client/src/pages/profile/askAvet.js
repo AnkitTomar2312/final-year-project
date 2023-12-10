@@ -104,7 +104,7 @@ const AskAvet = () => {
               backgroundColor: "#07e9a1",
               marginTop: "28px",
               borderRadius: "8px",
-              padding: "40px 0 0 0 ",
+              padding: "40px 8px 0px 8px ",
             }}
           >
             <p

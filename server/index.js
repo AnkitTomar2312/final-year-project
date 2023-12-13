@@ -5,7 +5,7 @@ import cors from 'cors';
 const app = express()
 const PORT = 3080
 const openai = new OpenAI({
-    apiKey: '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',
+    apiKey: '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',
 });
 
 app.use(cors())

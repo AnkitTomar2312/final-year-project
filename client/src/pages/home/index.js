@@ -205,6 +205,7 @@ const Index = ({ children }) => {
                     fontSize: "18px",
                     marginBottom: "0",
                     borderRadius: "8px",
+                    marginTop: "38px",
                   }}
                   onClick={() => {
                     navigate("/chat");
@@ -315,6 +316,7 @@ const Index = ({ children }) => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
+                    opacity: "0.5",
                   }}
                 >
                   <p
@@ -358,6 +360,7 @@ const Index = ({ children }) => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  marginTop: "58px",
                 }}
               >
                 <p

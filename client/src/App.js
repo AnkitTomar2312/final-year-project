@@ -24,9 +24,6 @@ function App() {
       <Route path="/frontend" element={<Frontend />} />
       <Route path="/backend" element={<Backend />} />
       <Route path="/python" element={<Python />} />
-      <Route path="/notes" element={<Notes />} />
-      <Route path="/notes" element={<Notes />} />
-      <Route path="/notes" element={<Notes />} />
       <Route path="/goals" element={<Goals />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/askAvet" element={<Askavet />} />

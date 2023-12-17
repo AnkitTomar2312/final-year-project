@@ -12,6 +12,7 @@ import Todo from "../../assets/icons/todo.svg";
 import Journal from "../../assets/icons/journal.svg";
 import Aim from "../../assets/icons/aim.svg";
 import Search from "../../assets/images/search.png";
+import Banner from "../../components/banner/banner";
 const Index = ({ children }) => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
@@ -30,6 +31,7 @@ const Index = ({ children }) => {
         <Splash />
       ) : (
         <>
+          <Banner />
           <section
             style={{
               padding: "60px 24px 100px 24px",
@@ -265,6 +267,7 @@ const Index = ({ children }) => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
+                  onClick={() => navigate("/goals")}
                 >
                   <p
                     style={{
@@ -289,6 +292,7 @@ const Index = ({ children }) => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
+                  onClick={() => navigate("/notes")}
                 >
                   <p
                     style={{

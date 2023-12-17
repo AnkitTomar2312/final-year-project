@@ -207,7 +207,7 @@ const AskAvet = () => {
                   textAlign: "center",
                 }}
               >
-                Audio and video Consultation
+                Text and video Consultation
               </p>
               <p
                 style={{
@@ -265,9 +265,11 @@ const AskAvet = () => {
                     borderRadius: "8px",
                     marginTop: "3px",
                   }}
-                  onClick={openPopup}
+                  onClick={() => {
+                    navigate("/consultation-text");
+                  }}
                 >
-                  Audio Consultation
+                  Text Consultation
                 </p>
               </div>
               <div
@@ -292,7 +294,9 @@ const AskAvet = () => {
                     borderRadius: "8px",
                     marginTop: "3px",
                   }}
-                  onClick={openPopup}
+                  onClick={() => {
+                    navigate("/consultation-video");
+                  }}
                 >
                   Video Consultation
                 </p>

@@ -15,6 +15,8 @@ import TutorialDSA from "./pages/videoTutorials/tutorialDSA";
 import InterviewDSA from "./pages/interViewQuestions/interviewQuestionDSA";
 import ArrayDSA from "./pages/questions/array";
 import Chat from "./components/Chat/Chat";
+import ConsultationText from "./pages/consultation/consultationText";
+import ConsultationVideo from "./pages/consultation/consultationVideo";
 function App() {
   return (
     <Routes>
@@ -33,6 +35,8 @@ function App() {
       <Route path="/dsa/interview-questions" element={<InterviewDSA />} />
       <Route path="/dsa/practice-questions/arrays" element={<ArrayDSA />} />
       <Route path="/chat" element={<Chat />} />
+      <Route path="/Consultation-text" element={<ConsultationText />} />
+      <Route path="/Consultation-video" element={<ConsultationVideo />} />
     </Routes>
   );
 }

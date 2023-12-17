@@ -1,21 +1,74 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from "../../components/firebase/firebase"
+
 function Login() {
-  const [isRegister, setIsRegister] = useState(false);
-  const [field1, setField1] = useState("");
-  const [field2, setField2] = useState("");
+
+  const [login, setLogin] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
-  const checkfield = (e) => {
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        
+        // You can use React Router or another navigation method here
+        console.log('User is logged in:', user);
+      } else {
+        // No user is logged in
+        console.log('No user is logged in');
+      }
+    });
+
+    // Clean up the subscription when the component unmounts
+    return () => unsubscribe();
+  }, []);
+
+  const handleSubmit = async(e) => {
+
     e.preventDefault();
-    if (field1 === "") {
+    if (email && password) {
+      try {
+        if (login) {
+          // User is trying to log in
+          await signInWithEmailAndPassword(auth, email, password);
+          setEmail('');
+          setPassword('');
+          navigate("/home");
+        } else {
+          // User is trying to sign up
+          await createUserWithEmailAndPassword(auth, email, password);
+          if(!login){
+            setEmail("")
+            setPassword("")
+            setLogin(!login)
+          }
+        }
+
+        // Clear the input fields
+        // Redirect to the home page or another page upon successful login/signup
+        // You can use React Router or another navigation method here
+        console.log('Successful login/signup');
+      } catch (error) {
+        // Handle login/signup errors
+        console.error('Error:', error.message);
+        alert('invalid user');
+      }
+    } else {
+      alert('Fill in all data');
       setError(true);
     }
-    if (field2 === "") {
-      setError(true);
-    }
-    navigate("/home");
+  };
+
+  const handleSwitch = () => {
+    setEmail("");
+    setPassword("");
+    setLogin(!login);
   };
 
   return (
@@ -43,21 +96,21 @@ function Login() {
                 fontSize: "16px",
               }}
             >
-              {!isRegister
+              {login
                 ? " Welcome back, Please login to your account"
                 : " Join our platform 😊"}
             </h4>
           </header>
-          <form>
+          <form method="POST">
             <input
               type="email"
               placeholder="Email"
               className="input-field animation a3"
               onChange={(e) => {
-                setField1(e.target.value);
+                setEmail(e.target.value);
               }}
             />
-            {error && field1 === "" && (
+            {error && email === "" && (
               <p
                 style={{
                   lineHeight: "16px",
@@ -74,10 +127,10 @@ function Login() {
               placeholder="Password"
               className="input-field animation a4"
               onChange={(e) => {
-                setField1(e.target.value);
+                setPassword(e.target.value);
               }}
             />
-            {error && field1 === "" && (
+            {error && password === "" && (
               <p
                 style={{
                   lineHeight: "16px",
@@ -89,7 +142,7 @@ function Login() {
                 Password is required
               </p>
             )}
-            {!isRegister && (
+            {login && (
               <p className="animation a5">
                 <a href="#" style={{ color: "#171717" }}>
                   Forgot password?
@@ -106,15 +159,15 @@ function Login() {
               <button
                 className="animation a6"
                 style={
-                  field2 === "" && field1 === ""
-                    ? { background: "#ffd66d", color: "#171717" }
-                    : { background: "#07e9a1" }
+                  password === "" && email === ""
+                    ? { background: "#ffd66d", color: "#171717", cursor:"pointer" }
+                    : { background: "#07e9a1", cursor:"pointer" }
                 }
                 onClick={(e) => {
-                  checkfield(e);
+                  handleSubmit(e);
                 }}
               >
-                {isRegister ? "Register" : "Log In"}
+                {login ? "Log In" : "Register"}
               </button>
             </div>
           </form>
@@ -125,12 +178,11 @@ function Login() {
               textAlign: "center",
               marginTop: "12px",
               textDecoration: "underline",
+              cursor:"pointer"
             }}
-            onClick={() => {
-              setIsRegister(!isRegister);
-            }}
+            onClick={handleSwitch}
           >
-            {isRegister ? " Log In" : " Join"}
+            {login ? " Join" : " Log In"}
           </p>
         </div>
       </div>

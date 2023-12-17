@@ -12,6 +12,7 @@ import Todo from "../../assets/icons/todo.svg";
 import Journal from "../../assets/icons/journal.svg";
 import Aim from "../../assets/icons/aim.svg";
 import Search from "../../assets/images/search.png";
+import Banner from "../../components/banner/banner";
 const Index = ({ children }) => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
@@ -30,6 +31,7 @@ const Index = ({ children }) => {
         <Splash />
       ) : (
         <>
+          <Banner />
           <section
             style={{
               padding: "60px 24px 100px 24px",
@@ -49,6 +51,9 @@ const Index = ({ children }) => {
                 paddingTop: "30px",
                 borderRadius: "8px",
                 height: "532px",
+              }}
+              onClick={() => {
+                navigate("/profile");
               }}
             >
               <p
@@ -179,19 +184,35 @@ const Index = ({ children }) => {
               >
                 100% money back guarantee!
               </p>
-              <p
+              <div
                 style={{
-                  marginBottom: "0",
-                  textAlign: "center",
-                  fontWeight: "600",
-                  fontFamily: "Space GrOtesk",
-                  color: "#fff",
-                  fontSize: "14px",
-                  marginTop: "24px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "32px",
                 }}
+                onClick={() => navigate("/askAvet")}
               >
-                COMMING SOON!
-              </p>
+                <p
+                  style={{
+                    width: "67%",
+                    textAlign: "center",
+                    background: "rgb(255, 255, 255)",
+                    boxShadow:
+                      "rgba(96, 97, 112, 0.1) 0px 2px 4px 0px, rgba(40, 41, 61, 0.04) 0px 0px 1px 0px",
+                    padding: "10px 24px",
+                    fontWeight: "600",
+                    fontSize: "18px",
+                    marginBottom: "0",
+                    borderRadius: "8px",
+                  }}
+                  onClick={() => {
+                    navigate("/chat");
+                  }}
+                >
+                  ask an expert
+                </p>
+              </div>
               <img style={{ width: "100%", marginTop: "24px" }} src={Ask} />
             </div>
             <div
@@ -246,6 +267,7 @@ const Index = ({ children }) => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
+                  onClick={() => navigate("/goals")}
                 >
                   <p
                     style={{
@@ -270,6 +292,7 @@ const Index = ({ children }) => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                   }}
+                  onClick={() => navigate("/notes")}
                 >
                   <p
                     style={{

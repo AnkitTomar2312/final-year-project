@@ -17,6 +17,8 @@ import ArrayDSA from "./pages/questions/array";
 import StringDSA from "./pages/questions/string";
 import LinkedlistDSA from "./pages/questions/linkedList";
 import Chat from "./components/Chat/Chat";
+import ConsultationText from "./pages/consultation/consultationText";
+import ConsultationVideo from "./pages/consultation/consultationVideo";
 function App() {
   return (
     <Routes>
@@ -26,9 +28,6 @@ function App() {
       <Route path="/frontend" element={<Frontend />} />
       <Route path="/backend" element={<Backend />} />
       <Route path="/python" element={<Python />} />
-      <Route path="/notes" element={<Notes />} />
-      <Route path="/notes" element={<Notes />} />
-      <Route path="/notes" element={<Notes />} />
       <Route path="/goals" element={<Goals />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/askAvet" element={<Askavet />} />
@@ -43,6 +42,8 @@ function App() {
       />
       <Route path="/dsa/practice-questions/strings" element={<StringDSA />} />
       <Route path="/chat" element={<Chat />} />
+      <Route path="/Consultation-text" element={<ConsultationText />} />
+      <Route path="/Consultation-video" element={<ConsultationVideo />} />
     </Routes>
   );
 }

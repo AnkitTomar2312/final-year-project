@@ -1,0 +1,37 @@
+/* Popup.css */
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #ffefcb;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  animation: slideIn 0.5s ease-in-out;
+  border-radius: 18px;
+}
+
+.popup-content {
+  background: #ffefcb;
+  padding: 20px 20px 70px 20px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 50px;
+  color: #171717;
+  font-weight: 500;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

@@ -3,12 +3,28 @@ import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
 import Expert from "../../assets/images/profile-consul.jpg";
+import { auth } from "../../components/firebase/firebase";
+import Arrow from "../../assets/icons/arrow.svg";
 const Profile = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+
   setTimeout(() => {
     setLoading(false);
   }, 2000);
+
+  const handleLogout = async () => {
+    try {
+      // Sign out from Firebase
+      await auth.signOut();
+
+      // Navigate to the login page
+      navigate("/login");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+  const analysis = ["your progress", "your analytics", "suggestions by AI"];
   const offering = [
     {
       id: 1,
@@ -27,9 +43,12 @@ const Profile = () => {
       ) : (
         <section
           style={{
-            paddingTop: "90px",
+            padding: "90px 24px",
             backgroundColor: "#f3f4f6",
+<<<<<<< HEAD
             paddingBottom: "90px",
+=======
+>>>>>>> 20b81edb748bb9397c3aa4c073657b281221b826
             fontFamily: "poppins",
           }}
         >
@@ -49,7 +68,7 @@ const Profile = () => {
                   fontWeight: "600",
                 }}
               >
-                Er.
+                Name
               </p>
               <p
                 style={{
@@ -60,7 +79,7 @@ const Profile = () => {
                   fontWeight: "400",
                 }}
               >
-                Frontend
+                field
               </p>
               <p
                 className="mb-0  font-16 font-regular"
@@ -72,7 +91,7 @@ const Profile = () => {
                   fontWeight: "400",
                 }}
               >
-                25 years experience
+                member since
               </p>
 
               <div
@@ -147,89 +166,65 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div>
-            <div
-              style={{
-                marginTop: "24px",
-                padding: "0 24px",
-                backgroundColor: "#f3f4f6",
-              }}
-            >
-              <p
+          {analysis.map((item, index) => {
+            return (
+              <div
+                key={index}
                 style={{
-                  lineHeight: "26px",
-                  marginBottom: "0",
-                  fontSize: "26px",
-                  fontWeight: "700",
-                  paddingTop: "24px",
+                  boxShadow:
+                    "rgba(40, 41, 61, 0.04) 0px 0px 1.19788px, rgba(96, 97, 112, 0.16) 0px 2.39577px 4.79153px",
+                  borderRadius: "10.2089px",
+                  width: "100%",
+                  backgroundColor: "#fff",
+                  padding: "12px",
+                  marginTop: "28px",
                 }}
               >
-                Offering
-              </p>
-              {offering.map((item, id) => {
-                return (
-                  <div
-                    key={id}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
                     style={{
-                      textAlign: "start",
-                      marginTop: "18px",
-                      backgroundColor: "#fff",
-                      padding: "8px",
-                      borderRadius: "4px",
+                      letterSpacing: "0.01em",
+                      lineHeight: "24px",
+                      fontWeight: "700",
+                      fontSize: "20px",
+                      marginBottom: "0",
                     }}
                   >
-                    <p
-                      style={{
-                        fontSize: "18px",
-                        marginBottom: "0px",
-                        fontWeight: "600",
-                      }}
-                    >
-                      {item.title}:-
-                    </p>
-                    <p
-                      style={{
-                        opacity: "0.8",
-                        fontSize: "18px",
-                        fontWeight: "500",
-                        lineHeight: "24px",
-                        marginTop: "8px",
-                      }}
-                    >
-                      {item.description}
-                    </p>
-                    <div style={{ display: "flex", marginTop: "18px" }}>
-                      <p
-                        style={{
-                          lineHeight: "18px",
-                          flex: "0.6",
-                          marginBottom: "0px",
-                          marginTop: "8px",
-                          fontFamily: "monotype corsiva",
-                          fontSize: "26px",
-                        }}
-                      >
-                        at Rs {item.price}
-                      </p>
-                      <p
-                        style={{
-                          textAlign: "center",
-                          flex: "0.4",
-                          fontSize: "16px",
-                          borderRadius: "8px",
-                          backgroundColor: "#171717",
-                          color: "#fff",
-                          padding: "10px 14px 10px 14px",
-                        }}
-                        onClick={() => navigate("/askAvet")}
-                      >
-                        {item.cta}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+                    {item}
+                  </p>
+                  <img style={{ rotate: "180deg" }} src={Arrow} alt="hh" />
+                </div>
+              </div>
+            );
+          })}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "80px",
+            }}
+          >
+            <p
+              style={{
+                padding: "8px 14px",
+                backgroundColor: "#f76152",
+                color: "#fff",
+                width: "45%",
+                textAlign: "center",
+                borderRadius: "8px",
+                cursor: "pointer",
+              }}
+              onClick={handleLogout}
+            >
+              Log Out
+            </p>
           </div>
           <div
             style={{

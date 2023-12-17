@@ -45,10 +45,6 @@ const Profile = () => {
           style={{
             padding: "90px 24px",
             backgroundColor: "#f3f4f6",
-<<<<<<< HEAD
-            paddingBottom: "90px",
-=======
->>>>>>> 20b81edb748bb9397c3aa4c073657b281221b826
             fontFamily: "poppins",
           }}
         >
@@ -222,27 +218,6 @@ const Profile = () => {
                 cursor: "pointer",
               }}
               onClick={handleLogout}
-            >
-              Log Out
-            </p>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              marginTop: "80px",
-            }}
-          >
-            <p
-              style={{
-                padding: "8px 14px",
-                backgroundColor: "#f76152",
-                color: "#fff",
-                width: "45%",
-                textAlign: "center",
-                borderRadius: "8px",
-              }}
             >
               Log Out
             </p>

@@ -241,14 +241,62 @@ const AskAvet = () => {
                 labore anim consectetur minim officia commodo enim sunt officia
                 ex enim velit enim. Et culpa in occaecat minim proident id
                 commodo. Aliqua nostrud officia ullamco laboris nisi commodo.
-                <br />
-                Id voluptate dolor ipsum amet ut sit exercitation exercitation
-                veniam irure ex officia tempor. Enim nisi non occaecat sunt
-                laboris eiusmod aliquip laboris excepteur velit aliqua. Fugiat
-                labore anim consectetur minim officia commodo enim sunt officia
-                ex enim velit enim. Et culpa in occaecat minim proident id
-                commodo. Aliqua nostrud officia ullamco laboris nisi commodo.
               </p>
+
+              <div
+                style={{
+                  marginTop: "38px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <p
+                  style={{
+                    width: "67%",
+                    textAlign: "center",
+                    background: "rgb(255, 255, 255)",
+                    boxShadow:
+                      "rgba(96, 97, 112, 0.1) 0px 2px 4px 0px, rgba(40, 41, 61, 0.04) 0px 0px 1px 0px",
+                    padding: "10px 24px",
+                    fontWeight: "600",
+                    fontSize: "18px",
+                    marginBottom: "0",
+                    borderRadius: "8px",
+                    marginTop: "3px",
+                  }}
+                  onClick={openPopup}
+                >
+                  Audio Consultation
+                </p>
+              </div>
+              <div
+                style={{
+                  marginTop: "38px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <p
+                  style={{
+                    width: "67%",
+                    textAlign: "center",
+                    background: "rgb(255, 255, 255)",
+                    boxShadow:
+                      "rgba(96, 97, 112, 0.1) 0px 2px 4px 0px, rgba(40, 41, 61, 0.04) 0px 0px 1px 0px",
+                    padding: "10px 24px",
+                    fontWeight: "600",
+                    fontSize: "18px",
+                    marginBottom: "0",
+                    borderRadius: "8px",
+                    marginTop: "3px",
+                  }}
+                  onClick={openPopup}
+                >
+                  Video Consultation
+                </p>
+              </div>
             </Popup>
 
             {/* The rest of your app content */}

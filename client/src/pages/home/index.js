@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
+import { useNavigate } from "react-router-dom";
 import Splash from "../../components/splash/splash";
 import Chat from "../../components/Chat/Chat";
 import illus from "../../assets/icons/back-illustration.svg";
@@ -9,10 +10,11 @@ import LOGO from "../../assets/images/aupdeshik-logo.jpg";
 import Ask from "../../assets/images/ask.png";
 import Todo from "../../assets/icons/todo.svg";
 import Journal from "../../assets/icons/journal.svg";
-// import  from "../../assets/images/.svg";
+import Aim from "../../assets/icons/aim.svg";
+import Search from "../../assets/images/search.png";
 const Index = ({ children }) => {
+  const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoader(false);
@@ -281,7 +283,7 @@ const Index = ({ children }) => {
                   >
                     Aim
                   </p>
-                  <img src="/images/Frame18646.svg" alt="" width="100%" />
+                  <img src={Aim} alt="" width="100%" />
                 </div>
                 <div
                   style={{
@@ -311,7 +313,7 @@ const Index = ({ children }) => {
             <div
               style={{
                 backgroundColor: "#CEC2EE",
-                padding: "24px 0",
+                padding: "24px 0 0 0",
                 marginTop: "28px",
                 borderRadius: "8px",
               }}
@@ -349,10 +351,14 @@ const Index = ({ children }) => {
                     borderRadius: "8px",
                     marginTop: "3px",
                   }}
+                  onClick={() => {
+                    navigate("/chat");
+                  }}
                 >
-                  try food search
+                  try search
                 </p>
               </div>
+              <img style={{ width: "100%", marginTop: "8px" }} src={Search} />
             </div>
           </section>
           <img style={{ width: "100%", borderRadius: "8px" }} src={LOGO} />

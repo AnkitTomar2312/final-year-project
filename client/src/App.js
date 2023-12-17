@@ -10,7 +10,13 @@ import Python from "./pages/notes/notes";
 import Goals from "./pages/goals/goals";
 import Profile from "./pages/profile/profile";
 import Askavet from "./pages/profile/askAvet";
-
+import PracticeDSA from "./pages/practiceQuestions/practice-questions-dsa";
+import TutorialDSA from "./pages/videoTutorials/tutorialDSA";
+import InterviewDSA from "./pages/interViewQuestions/interviewQuestionDSA";
+import ArrayDSA from "./pages/questions/array";
+import StringDSA from "./pages/questions/string";
+import LinkedlistDSA from "./pages/questions/linkedList";
+import Chat from "./components/Chat/Chat";
 function App() {
   return (
     <Routes>
@@ -27,6 +33,16 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/askAvet" element={<Askavet />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/dsa/practice-questions" element={<PracticeDSA />} />
+      <Route path="/dsa/tutorials" element={<TutorialDSA />} />
+      <Route path="/dsa/interview-questions" element={<InterviewDSA />} />
+      <Route path="/dsa/practice-questions/arrays" element={<ArrayDSA />} />
+      <Route
+        path="/dsa/practice-questions/linkedList"
+        element={<LinkedlistDSA />}
+      />
+      <Route path="/dsa/practice-questions/strings" element={<StringDSA />} />
+      <Route path="/chat" element={<Chat />} />
     </Routes>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/login";
+import Login from "./pages/login/index";
+import Register from "./pages/login/register";
 import Home from "./pages/home";
 import Notes from "./pages/notes/notes";
 import Dsa from "./pages/notes/dsa";
@@ -22,7 +23,7 @@ import ConsultationVideo from "./pages/consultation/consultationVideo";
 function App() {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/notes" element={<Notes />} />
       <Route path="/dsa" element={<Dsa />} />
       <Route path="/frontend" element={<Frontend />} />
@@ -32,6 +33,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/askAvet" element={<Askavet />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/dsa/practice-questions" element={<PracticeDSA />} />
       <Route path="/dsa/tutorials" element={<TutorialDSA />} />
       <Route path="/dsa/interview-questions" element={<InterviewDSA />} />

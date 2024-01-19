@@ -35,7 +35,16 @@ const Profile = () => {
       cta: "Ask",
     },
   ];
-
+  const handleAnalysis = (index) => {
+    switch (index) {
+      case 1:
+        console.log("clicked");
+        navigate("/your-analytics");
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <HomeLayout>
       {loading ? (
@@ -182,6 +191,9 @@ const Profile = () => {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
+                  }}
+                  onClick={() => {
+                    handleAnalysis(index);
                   }}
                 >
                   <p

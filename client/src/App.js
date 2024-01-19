@@ -20,6 +20,7 @@ import LinkedlistDSA from "./pages/questions/linkedList";
 import Chat from "./components/Chat/Chat";
 import ConsultationText from "./pages/consultation/consultationText";
 import ConsultationVideo from "./pages/consultation/consultationVideo";
+import YourAnalysis from "./pages/profile/analytics";
 function App() {
   return (
     <Routes>
@@ -46,6 +47,7 @@ function App() {
       <Route path="/chat" element={<Chat />} />
       <Route path="/Consultation-text" element={<ConsultationText />} />
       <Route path="/Consultation-video" element={<ConsultationVideo />} />
+      <Route path="/your-analytics" element={<YourAnalysis />} />
     </Routes>
   );
 }

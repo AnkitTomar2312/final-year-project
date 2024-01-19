@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
-
+import Chart from "../../components/chart";
 const Analytics = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,9 @@ const Analytics = () => {
             height: "auto",
             width: "100%",
           }}
-        ></section>
+        >
+          <Chart />
+        </section>
       )}
     </HomeLayout>
   );

@@ -66,6 +66,7 @@ const Profile = () => {
               >
                 Name
               </p>
+
               <p
                 style={{
                   lineHeight: "16px",

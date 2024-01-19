@@ -16,7 +16,7 @@ const MobileBottomNav = () => {
       } else if (selectedItem === "profile.svg") {
         navigate("/profile");
       } else if (selectedItem === "home.svg") {
-        navigate("/home");
+        navigate("/");
       }
     }
   }, [navigate, selectedItem]);

@@ -18,11 +18,36 @@ const Analytics = () => {
           style={{
             padding: "60px 24px 100px 24px",
             backgroundColor: "#f3f4f6",
-            height: "auto",
+            height: "100vh",
             width: "100%",
           }}
         >
-          <Chart />
+          <p
+            style={{
+              letterSpacing: "0.01em",
+              lineHeight: "24px",
+              fontWeight: "700",
+              fontSize: "36px",
+              marginBottom: "0",
+              marginTop: "48px",
+              textAlign: "center",
+              fontFamily: "Poppins",
+            }}
+          >
+            Your Analysis
+          </p>
+          <div
+            style={{
+              marginTop: "48px",
+              padding: "5px",
+              background: "#fff",
+              borderRadius: "8px",
+              boxShadow:
+                "rgba(40, 41, 61, 0.04) 0px 0px 1.19788px, rgba(96, 97, 112, 0.16) 0px 2.39577px 4.79153px",
+            }}
+          >
+            <Chart />
+          </div>
         </section>
       )}
     </HomeLayout>

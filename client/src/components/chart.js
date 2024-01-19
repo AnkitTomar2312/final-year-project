@@ -15,9 +15,9 @@ const state = {
   ],
   datasets: [
     {
-      label: "Class strength",
-      backgroundColor: "rgba(219, 79, 142, 0.77)",
-      borderColor: "rgba(219, 79, 79, 0.77)",
+      label: "Progress",
+      backgroundColor: "#02c878",
+      borderColor: "#02c878",
       borderWidth: 2,
       data: [38, 47, 19, 20, 40, 50, 39],
     },
@@ -38,7 +38,7 @@ export default class App extends React.Component {
             },
             legend: {
               display: true,
-              position: "right",
+              position: "center",
             },
           }}
         />

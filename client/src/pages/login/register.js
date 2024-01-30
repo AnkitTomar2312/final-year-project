@@ -35,14 +35,14 @@ const Login = () => {
         <section
           style={{
             padding: "60px 24px 100px 24px",
-            backgroundColor: "#f3f4f6",
+
             height: "auto",
             width: "100%",
           }}
         >
           <div
             style={{
-              marginTop: "48px",
+              marginTop: "20vh",
               justifyContent: "center",
               alignItem: "center",
               width: "100%",
@@ -52,30 +52,91 @@ const Login = () => {
             }}
           >
             <input
+              style={{
+                padding: "18px",
+                fontSize: "18px",
+                fontWeight: "600",
+                fontFamily: "Poppins",
+                border: "2px solid #fff",
+                padding: "18px",
+                transition: "border-color 0.3s ease",
+                outline: "none",
+                borderRadius: "8px",
+                background: "#f3f4f6",
+              }}
               type="text"
               placeholder="input name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onFocus={(e) => (e.target.style.borderColor = "#007bff")}
+              onBlur={(e) => (e.target.style.borderColor = "#fff")}
             />
             <input
+              style={{
+                padding: "18px",
+                fontSize: "18px",
+                fontWeight: "600",
+                fontFamily: "Poppins",
+                border: "2px solid #fff",
+                padding: "18px",
+                transition: "border-color 0.3s ease",
+                outline: "none",
+                borderRadius: "8px",
+                background: "#f3f4f6",
+              }}
               type="text"
               placeholder="input email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onFocus={(e) => (e.target.style.borderColor = "#007bff")}
+              onBlur={(e) => (e.target.style.borderColor = "#fff")}
             />
             <input
+              style={{
+                padding: "18px",
+                fontSize: "18px",
+                fontWeight: "600",
+                fontFamily: "Poppins",
+                border: "2px solid #fff",
+                padding: "18px",
+                transition: "border-color 0.3s ease",
+                outline: "none",
+                borderRadius: "8px",
+                background: "#f3f4f6",
+              }}
               type="passwrord"
               placeholder="input password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onFocus={(e) => (e.target.style.borderColor = "#007bff")}
+              onBlur={(e) => (e.target.style.borderColor = "#fff")}
             />
-            <button
-              onClick={() => {
-                sendData();
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "48px",
               }}
             >
-              Register
-            </button>
+              <button
+                style={{
+                  background: "#07e9a1",
+                  width: "80%",
+                  padding: "8px ",
+                  borderRadius: "4px",
+                  border: "0",
+                  fontSize: "18px",
+                  fontWeight: "600",
+                  fontFamily: "Poppins",
+                }}
+                onClick={() => {
+                  //sendData();
+                }}
+              >
+                Register
+              </button>
+            </div>
           </div>
         </section>
       )}

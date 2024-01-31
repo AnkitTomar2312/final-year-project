@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Splash from "../../components/splash/splash";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // setTimeout(() => {
-  //   setLoading(false);
-  // }, 2000);
+  const [allFieldsFilled, setAllFieldsFilled] = useState(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+  useEffect(() => {
+    if (name && email && password) {
+      setAllFieldsFilled(false);
+    }
+  });
+
   const sendData = async () => {
     let result = await fetch("http://localhost:5000/register", {
       method: "post",
@@ -65,7 +72,7 @@ const Login = () => {
                 background: "#f3f4f6",
               }}
               type="text"
-              placeholder="input name"
+              placeholder="name..."
               value={name}
               onChange={(e) => setName(e.target.value)}
               onFocus={(e) => (e.target.style.borderColor = "#007bff")}
@@ -85,7 +92,7 @@ const Login = () => {
                 background: "#f3f4f6",
               }}
               type="text"
-              placeholder="input email"
+              placeholder="email..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onFocus={(e) => (e.target.style.borderColor = "#007bff")}
@@ -105,7 +112,7 @@ const Login = () => {
                 background: "#f3f4f6",
               }}
               type="passwrord"
-              placeholder="input password"
+              placeholder="password..."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onFocus={(e) => (e.target.style.borderColor = "#007bff")}
@@ -120,19 +127,34 @@ const Login = () => {
               }}
             >
               <button
-                style={{
-                  background: "#07e9a1",
-                  width: "80%",
-                  padding: "8px ",
-                  borderRadius: "4px",
-                  border: "0",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  fontFamily: "Poppins",
-                }}
+                style={
+                  name && password && email !== ""
+                    ? {
+                        background: "#07e9a1",
+                        width: "60%",
+                        padding: "12px ",
+                        borderRadius: "4px",
+                        border: "0",
+                        fontSize: "18px",
+                        fontWeight: "600",
+                        fontFamily: "Poppins",
+                        color: "#fff",
+                      }
+                    : {
+                        background: "#ffd66d",
+                        width: "60%",
+                        padding: "12px ",
+                        borderRadius: "4px",
+                        border: "0",
+                        fontSize: "18px",
+                        fontWeight: "600",
+                        fontFamily: "Poppins",
+                      }
+                }
                 onClick={() => {
-                  //sendData();
+                  sendData();
                 }}
+                disabled={allFieldsFilled}
               >
                 Register
               </button>
